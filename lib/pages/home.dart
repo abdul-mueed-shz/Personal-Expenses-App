@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:personalexpenseapp/models/tx.dart';
 import 'package:personalexpenseapp/services/datachart.dart';
@@ -55,6 +57,13 @@ class _HomeState extends State<Home> {
     final mediaQueryVar = MediaQuery.of(context);
     final landscapeMode = mediaQueryVar.orientation == Orientation.landscape;
     final Appbar = AppBar(
+      leading: IconButton(
+        icon: Icon(
+          Icons.exit_to_app,
+          color: Colors.white,
+        ),
+        onPressed: () => exit(0),
+      ),
       title: Text(
         'Xpense',
         style: TextStyle(
